@@ -2,24 +2,24 @@
     <input type="text" placeholder="title" formControlName="title" />
   
     <div *ngIf="title?.invalid && title?.touched">
-      <p *ngIf="title?.errors?.['required']">Why not to fill this title 😉?</p>
+      <p *ngIf="title?.errors?.['required']">Fill the title..</p>
     </div>
     <input type="text" placeholder="author" formControlName="author" />
   
     <div *ngIf="author?.invalid && author?.touched">
-      <p *ngIf="author?.errors?.['required']">Why not to fill this poster 😉?</p>
+      <p *ngIf="author?.errors?.['required']">Fill this author name</p>
     </div>
 
     <input type="text" placeholder="category" formControlName="category" />
   
     <div *ngIf="category?.invalid && category?.touched">
-      <p *ngIf="category?.errors?.['required']">Why not to fill this rating 😉?</p>
+      <p *ngIf="category?.errors?.['required']">Fill category of the book</p>
     </div>
   
     <input type="text" placeholder="publication_date" formControlName="publication_date" />
   
     <div *ngIf="publication_date?.invalid && publication_date?.touched">
-      <p *ngIf="publication_date?.errors?.['required']">status  Why not to fill this summary 😉?
+      <p *ngIf="publication_date?.errors?.['required']">FIll publication date
       </p>
     </div>
   
@@ -27,7 +27,7 @@
   
     <div *ngIf="status?.invalid && status?.touched">
       <p *ngIf="status?.errors?.['required']">
-        Why not to fill this trailer 😉?
+        Give the status of your reading
       </p>
     </div>
   
