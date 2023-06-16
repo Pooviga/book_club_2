@@ -20,10 +20,8 @@ export class BookCardComponent {
   constructor(private router: Router) {}
 
   delBook(id: string) {
-    // To parent component
     this.delete.emit(id);
   }
-  // constructor(private router: Router) {}
   goToDetails(id: string) {
     this.router.navigate([`/books/${id}`]);
   }
