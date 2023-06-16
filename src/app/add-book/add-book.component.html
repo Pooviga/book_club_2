@@ -1,0 +1,49 @@
+<form class="add-movie-form" [formGroup]="addBookForm" (ngSubmit)="onSubmit()">
+    <input type="text" placeholder="title" formControlName="title" />
+  
+    <div *ngIf="title?.invalid && title?.touched">
+      <p *ngIf="title?.errors?.['required']">Why not to fill this title 😉?</p>
+    </div>
+    <input type="text" placeholder="author" formControlName="author" />
+  
+    <div *ngIf="author?.invalid && author?.touched">
+      <p *ngIf="author?.errors?.['required']">Why not to fill this poster 😉?</p>
+    </div>
+
+    <input type="text" placeholder="category" formControlName="category" />
+  
+    <div *ngIf="category?.invalid && category?.touched">
+      <p *ngIf="category?.errors?.['required']">Why not to fill this rating 😉?</p>
+    </div>
+  
+    <input type="text" placeholder="publication_date" formControlName="publication_date" />
+  
+    <div *ngIf="publication_date?.invalid && publication_date?.touched">
+      <p *ngIf="publication_date?.errors?.['required']">status  Why not to fill this summary 😉?
+      </p>
+    </div>
+  
+    <input type="text" placeholder="status" formControlName="status" />
+  
+    <div *ngIf="status?.invalid && status?.touched">
+      <p *ngIf="status?.errors?.['required']">
+        Why not to fill this trailer 😉?
+      </p>
+    </div>
+  
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      [disabled]="addBookForm.invalid"
+    >
+      Add Movie
+    </button>
+  </form>
+  
+  <!-- <p>{{ addMovieForm.status }}</p> -->
+  <!-- <p>Errors</p>
+  <p>Name: {{ addMovieForm.get("username")?.errors | json }}</p>
+  <p>Age: {{ addMovieForm.get("age")?.errors | json }}</p> -->
+  
+  <!-- Sysn@f123 -->

@@ -1,0 +1,16 @@
+
+<div class="book-container">
+    <div>
+        <h1>{{book.title}}</h1>
+        
+        <h2>{{book.author}}</h2>
+        <p>{{book.category}}</p>
+        <p>{{book.publication_date}}</p>
+        <p>{{book.status}}</p>
+    </div>
+    <button (click)="goToDetails(book.id)">Info</button>
+
+    <button (click)="delBook(book.id)">Delete</button>
+    <button (click)="editBook(book.id)">EditBookInfo</button>
+
+</div>

@@ -1,0 +1,7 @@
+<div class="book-list-container">
+    <app-book-card
+      *ngFor="let mv of bookList$ | async; trackBy: trackByFn"
+      [book]="mv"
+      (delete)="deleteGetBook($event)"
+    ></app-book-card>
+</div>
