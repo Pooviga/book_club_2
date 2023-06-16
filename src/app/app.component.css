@@ -2,9 +2,21 @@ li {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    /* background-color: brown;
-    color: white; */
-    /* float:left; */
+    color: white; 
+    float:left;
   }
 
-  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+  }
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333333;
+  }
