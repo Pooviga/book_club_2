@@ -1,4 +1,8 @@
 <form class="add-movie-form" [formGroup]="addBookForm" (ngSubmit)="onSubmit()">
+  <input type="url" placeholder="url" formControlName="image" />
+    <div *ngIf="image?.invalid && image?.touched">
+      <p *ngIf="image?.errors?.['required']">Fill the image url..</p>
+    </div>
     <input type="text" placeholder="title" formControlName="title" />
   
     <div *ngIf="title?.invalid && title?.touched">
@@ -7,19 +11,25 @@
     <input type="text" placeholder="author" formControlName="author" />
   
     <div *ngIf="author?.invalid && author?.touched">
-      <p *ngIf="author?.errors?.['required']">Fill this poster ?</p>
+      <p *ngIf="author?.errors?.['required']">Fill this author name?</p>
     </div>
 
     <input type="text" placeholder="category" formControlName="category" />
   
     <div *ngIf="category?.invalid && category?.touched">
-      <p *ngIf="category?.errors?.['required']">Fill this rating ?</p>
+      <p *ngIf="category?.errors?.['required']">Fill this category ?</p>
     </div>
   
     <input type="text" placeholder="publication_date" formControlName="publication_date" />
   
     <div *ngIf="publication_date?.invalid && publication_date?.touched">
-      <p *ngIf="publication_date?.errors?.['required']">Fill this summary 😉?
+      <p *ngIf="publication_date?.errors?.['required']">Fill this publication Date ?
+      </p>
+    </div>
+    <input type="text" placeholder="Summary" formControlName="summary" />
+  
+    <div *ngIf="summary?.invalid && summary?.touched">
+      <p *ngIf="summary?.errors?.['required']">Fill this summary .
       </p>
     </div>
   

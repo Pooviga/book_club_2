@@ -1,43 +1,73 @@
-<form class="add-movie-form" [formGroup]="addBookForm" (ngSubmit)="onSubmit()">
-    <input type="text" placeholder="title" formControlName="title" />
+<div class="bg-img">
+  <form class="add-movie-form" [formGroup]="addBookForm" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      <mat-label>Url</mat-label>
+      <input type="url" placeholder="Url" formControlName="image" />
+      <mat-error *ngIf="image?.invalid && image?.touched || image?.errors?.['required']"></mat-error>
+       Url is <strong>required</strong>
+    </mat-form-field>
+
+
+
+      <!-- <input type="url"  formControlName="image" />
+      <div *ngIf="image?.invalid && image?.touched">
+        <p> </p>
+      </div> -->
+    
+
+    <input type="text" placeholder="Title" formControlName="title" />
   
     <div *ngIf="title?.invalid && title?.touched">
-      <p *ngIf="title?.errors?.['required']">Fill the title..</p>
+      <p *ngIf="title?.errors?.['required']">Title is<strong>required</strong></p>
     </div>
-    <input type="text" placeholder="author" formControlName="author" />
+    <input type="text" placeholder="Author Name" formControlName="author" />
   
     <div *ngIf="author?.invalid && author?.touched">
-      <p *ngIf="author?.errors?.['required']">Fill this author name</p>
+      <p *ngIf="author?.errors?.['required']">Author name is <strong>required</strong></p>
     </div>
 
-    <input type="text" placeholder="category" formControlName="category" />
+    <input type="text" placeholder="Category" formControlName="category" />
   
     <div *ngIf="category?.invalid && category?.touched">
-      <p *ngIf="category?.errors?.['required']">Fill category of the book</p>
+      <p *ngIf="category?.errors?.['required']">Category is <strong>required</strong> of the Book</p>
     </div>
-  
-    <input type="text" placeholder="publication_date" formControlName="publication_date" />
+
+    <input type="date" placeholder="Publication Date" formControlName="publication_date" />
   
     <div *ngIf="publication_date?.invalid && publication_date?.touched">
-      <p *ngIf="publication_date?.errors?.['required']">FIll publication date
+      <p *ngIf="publication_date?.errors?.['required']">Publication date is <strong>required</strong>
       </p>
     </div>
+    <input type="text" placeholder="Summary" formControlName="summary" />
   
-    <input type="text" placeholder="status" formControlName="status" />
+    <div *ngIf="summary?.invalid && summary?.touched">
+      <p *ngIf="summary?.errors?.['required']">SUmmary is<strong>required</strong></p>
+    </div>
+  
+
+      <select name="cars" id="cars" formControlName="status">
+        <option value="currently_reading">Currently Reading</option>
+        <option value="have_read">Have Read</option>
+        <option value="plan_to_read">Plan to Read</option>
+      </select> 
   
     <div *ngIf="status?.invalid && status?.touched">
       <p *ngIf="status?.errors?.['required']">
-        Please Give the status of your reading
+        Status of reading is <strong>required</strong>
       </p>
     </div>
   
     <button
       mat-raised-button
-      color="primary"
       type="submit"
       [disabled]="addBookForm.invalid"
     >
       Add Movie
     </button>
   </form>
+  <!-- <div id="image">
+    <img src="https://wallpaperaccess.com/full/3133075.jpg">
+  </div> -->
+</div>
+
  

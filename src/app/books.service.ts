@@ -4,11 +4,10 @@ import { catchError, concatMap } from 'rxjs';
 import { Book } from './book-list/book-list.component';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class BooksService {
-
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   getBooks() {
     return this.http
@@ -37,9 +36,25 @@ export class BooksService {
       .get<Book>(`https://648a953b17f1536d65e94f3c.mockapi.io/book_club/${id}`)
       .pipe(catchError((err) => []));
   }
-  updateBook(id:string,book:Book){
+  updateBook(id: string, book: Book) {
     return this.http
-      .put<any>(`https://648a953b17f1536d65e94f3c.mockapi.io/book_club/${id}`,book)
+      .put<any>(
+        `https://648a953b17f1536d65e94f3c.mockapi.io/book_club/${id}`,
+        book
+      )
       .pipe(catchError((err) => []));
+  }
+  filtersearch(event: any) {
+    return this.http
+
+      .get(`https://648a951417f1536d65e94e7c.mockapi.io/book_club/`)
+
+      .pipe(
+        catchError((err) => {
+          console.log(err);
+
+          return [];
+        })
+      );
   }
 }

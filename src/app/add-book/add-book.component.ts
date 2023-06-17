@@ -15,8 +15,10 @@ import { Router } from '@angular/router';
 })
 export class AddBookComponent {
   addBookForm = this.fb.group({
+    image:['',Validators.required],
     title: ['', Validators.required],
     author: ['', [Validators.required]],
+    summary:['',Validators.required],
     category: ['', [Validators.required]],
     publication_date: ['', [Validators.required]],
     status: ['', [Validators.required]],
@@ -38,7 +40,10 @@ export class AddBookComponent {
       });
     }
   }
-get title() {
+  get image() {
+    return this.addBookForm.get('image');
+  }
+  get title() {
     return this.addBookForm.get('title');
   }
   get author() {
@@ -47,6 +52,9 @@ get title() {
 
   get category() {
     return this.addBookForm.get('category');
+  }
+  get summary() {
+    return this.addBookForm.get('summary');
   }
 
   get publication_date() {

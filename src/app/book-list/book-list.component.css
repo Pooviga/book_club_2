@@ -1,0 +1,26 @@
+.book-list-container {
+    
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    /* padding-bottom: 100px; */
+    /* margin-bottom: 50px; */
+  }
+  
+  .search_box {
+    border-radius: 5px;
+    background-color: #ebe6e6;
+    padding: 20px;
+  }
+
+

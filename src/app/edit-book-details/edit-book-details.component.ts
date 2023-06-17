@@ -10,9 +10,11 @@ import { BooksService } from '../books.service';
 })
 export class EditBookDetailsComponent {
   addBookForm = this.fb.group({
+    image:['',Validators.required],
     title: ['', Validators.required],
     author: ['', [Validators.required]],
     category: ['', [Validators.required]],
+    summary:['',Validators.required],
     publication_date: ['', [Validators.required]],
     status: ['', [Validators.required]],
   });
@@ -47,6 +49,12 @@ export class EditBookDetailsComponent {
     }
 get title() {
     return this.addBookForm.get('title');
+  }
+  get image() {
+    return this.addBookForm.get('image');
+  }
+  get summary() {
+    return this.addBookForm.get('summary');
   }
   get author() {
     return this.addBookForm.get('author');

@@ -1,16 +1,25 @@
 
 <div class="book-container">
     <div>
-        <h1>{{book.title}}</h1>
+        <img class="book-poster" [src]="book.image" [alt]="book.title" />
+        <div class="book-spec">
+            <h3>{{book.title}}📚</h3>    
+            <p><i>{{book.author}}✍</i></p>
+        </div>
         
-        <h2>{{book.author}}</h2>
         <p>{{book.category}}</p>
         <p>{{book.publication_date}}</p>
-        <p>{{book.status}}</p>
+        <button (click)="toggleSummary()">Toggle Summary</button>
+        <p *ngIf="show" class="movie-summary">{{ book.summary}}</p>
+        <p>Status of Reading : {{book.status}}</p>
+        
     </div>
-    <button (click)="goToDetails(book.id)">Info</button>
+    <div class="book-button">
+        <button (click)="goToDetails(book.id)">Info</button>
 
     <button (click)="delBook(book.id)">Delete</button>
     <button (click)="editBook(book.id)">EditBookInfo</button>
+    </div>
+    
 
 </div>

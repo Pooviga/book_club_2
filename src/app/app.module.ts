@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
- 
+import { Pipe, PipeTransform } from '@angular/core';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -13,7 +14,12 @@ import { BookListComponent } from './book-list/book-list.component';
 import { AddBookComponent } from './add-book/add-book.component';
 import { BookDetailsComponent } from './book-details/book-details.component';
 import { EditBookDetailsComponent } from './edit-book-details/edit-book-details.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule } from '@angular/material/button';
+import {MatInputModule} from '@angular/material/input';
+import { MatFormFieldModule} from '@angular/material/form-field';
+import {MatBadgeModule} from '@angular/material/badge';
+import { ErrorStateMatcher, ShowOnDirtyErrorStateMatcher } from '@angular/material/core';
 const routes: Routes=[
   {path :'home',component:HomeComponent},
   {path:'books',component:BookListComponent},
@@ -36,26 +42,23 @@ const routes: Routes=[
     EditBookDetailsComponent,
     
 
-    // @NgModule({
-    //   imports:      [ BrowserModule, FormsModule, HttpClientModule ],
-    //   declarations: [ AppComponent, HelloComponent ],
-    //   bootstrap:    [ AppComponent ]
-    // })
+
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forRoot(routes),
-    // BrowserAnimationsModule,
-    // MatButtonModule,
-    // MatInputModule,
-    // MatFormFieldModule,
-    // MatBadgeModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatBadgeModule,
     HttpClientModule,
+    BrowserAnimationsModule,
 
   ],
-  providers: [],
+  // providers: [{provide: ErrorStateMatcher}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
