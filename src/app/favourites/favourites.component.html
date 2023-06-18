@@ -1,0 +1,6 @@
+<div class="book-list-container">
+    <app-book-card
+      *ngFor="let mv of list$ | async; trackBy: trackByFn"
+      [book]="mv"
+    ></app-book-card>
+</div>

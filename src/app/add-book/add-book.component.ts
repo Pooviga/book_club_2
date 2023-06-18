@@ -23,6 +23,7 @@ export class AddBookComponent {
     category: ['', [Validators.required]],
     publication_date: ['', [Validators.required]],
     status: ['', [Validators.required]],
+    rating:['',Validators.required]
   });
   constructor(
     private fb: FormBuilder,
@@ -60,6 +61,9 @@ export class AddBookComponent {
 
   get publication_date() {
     return this.addBookForm.get('publication_date');
+  }
+  get rating() {
+    return this.addBookForm.get('rating');
   }
 
   get status() {

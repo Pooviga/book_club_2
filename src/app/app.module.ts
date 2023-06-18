@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Pipe, PipeTransform } from '@angular/core';
 import {MatDatepickerModule} from '@angular/material/datepicker';
+import {NgIf} from '@angular/common';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -23,14 +24,19 @@ import {MatBadgeModule} from '@angular/material/badge';
 import {MatIconModule} from '@angular/material/icon';
 import {MatSelectModule} from '@angular/material/select';
 import {MatNativeDateModule} from '@angular/material/core';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 import { ErrorStateMatcher, ShowOnDirtyErrorStateMatcher } from '@angular/material/core';
+import { RatingComponent } from './rating/rating.component';
+import { FavouritesComponent } from './favourites/favourites.component';
+import { FavCardComponent } from './fav-card/fav-card.component';
 const routes: Routes=[
   {path :'home',component:HomeComponent},
   {path:'books',component:BookListComponent},
   { path: 'books_add', component: AddBookComponent },
   {path:'books/:id',component:BookDetailsComponent},
   {path: 'books/edit/:id',component:EditBookDetailsComponent},
+  {path: 'books_fav',component:FavouritesComponent},
 
   // {path:'**',component}
 ]
@@ -45,6 +51,9 @@ const routes: Routes=[
     AddBookComponent,
     BookDetailsComponent,
     EditBookDetailsComponent,
+    RatingComponent,
+    FavouritesComponent,
+    FavCardComponent,
     
 
 
@@ -64,7 +73,8 @@ const routes: Routes=[
     BrowserAnimationsModule,
     MatSelectModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatTooltipModule
 
   ],
   // providers: [{provide: ErrorStateMatcher}],

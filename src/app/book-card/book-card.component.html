@@ -3,24 +3,31 @@
     <div>
         <img class="book-poster" [src]="book.image" [alt]="book.title" />
         <!-- <p class="book-spec"> -->
-            <h3>{{book.title}}📚</h3>    
+            <!-- <h3>{{book.title}}📚</h3>     -->
             
         <!-- </p> -->
-        <p><span style="text-transform:uppercase">Author : </span><i> {{book.author}}✍</i></p>
-        <p><span style="text-transform:uppercase">Category : </span><i>{{book.category}}</i></p>
-        <p><span style="text-transform:uppercase">Publication Date : </span><i>{{book.publication_date}}</i></p>
-        <mat-icon (click)="toggleSummary()" color = "primary">expand_more</mat-icon>
+        <div class="book-spec">
+            <h2>{{ book.title }}</h2>
+            <p>⭐ {{ book.rating }}</p>
+          </div>
+        <p><span style="text-transform:uppercase"> </span><i> {{book.author}}✍</i></p>
+        <p><span style="text-transform:uppercase"></span><b>Category : </b><i>{{book.category}}</i></p>
+        <p><span style="text-transform:uppercase"></span><b>Publication Date : </b><i>{{book.publication_date}}</i></p> 
+        <p><span><b>Status of Reading : </b></span>{{book.status}}</p>
+        <div>
+            <button matTooltip="Smmary of the movie" (click)="toggleSummary()" >Summary</button>
+        </div>
+        <br>
         <p *ngIf="!show" class="movie-summary">{{ book.summary}}</p>
-      
-        
-        <p><span style="text-transform:uppercase">Status of Reading : </span>{{book.status}}</p>
-        
     </div>
     <div class="book-button">
-        <mat-icon (click)="goToDetails(book.id)" class="icon" color = "primary">info</mat-icon>
+        <mat-icon matTooltip="To see more information" (click)="goToDetails(book.id)" class="icon" >info</mat-icon>
 
-   <mat-icon (click)="delBook(book.id)" class="icon" color = "warn">delete</mat-icon>
-    <mat-icon (click)="editBook(book.id)" class="icon" color = "primary">edit</mat-icon>
+   <mat-icon matTooltip="Delete Book" (click)="delBook(book.id)" class="icon" color = "warn">delete</mat-icon>
+    <mat-icon matTooltip="Edit Book" (click)="editBook(book.id)" class="icon" >edit</mat-icon>
+    <mat-icon matTooltip="Add to favourites" (click)="add(book.id)" class="icon">add</mat-icon>
+
+
     </div>
     
 

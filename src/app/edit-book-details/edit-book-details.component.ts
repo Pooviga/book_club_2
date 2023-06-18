@@ -17,6 +17,7 @@ export class EditBookDetailsComponent {
     summary:['',Validators.required],
     publication_date: ['', [Validators.required]],
     status: ['', [Validators.required]],
+    rating:['',Validators.required],
   });
   constructor(
     private fb: FormBuilder,
@@ -52,6 +53,9 @@ get title() {
   }
   get image() {
     return this.addBookForm.get('image');
+  }
+  get rating() {
+    return this.addBookForm.get('rating');
   }
   get summary() {
     return this.addBookForm.get('summary');

@@ -1,0 +1,10 @@
+.book-list-container {
+    
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+
+

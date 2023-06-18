@@ -29,11 +29,12 @@ body, html {
     /* position: absolute; */
     right: 0;
     /* margin: 80px; */
-    max-width: 600px;
+    max-width: 350px;
     padding: 20px;
-    /* background-color: white; */
+    background-color: white;
     margin-left: auto;
   margin-right: auto;
+  opacity:.9;
 
 
     /* opacity: 0.8; */
@@ -50,4 +51,9 @@ mat-form-field {
   width: 100%;
   place-content: center;
   display: flex;
+}
+.form_{
+  display: grid;
+  place-content: center;
+  height: 100vh;
 }

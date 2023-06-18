@@ -1,5 +1,18 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Router } from '@angular/router';
+import { catchError } from 'rxjs';
+
+interface Book {
+  id: string;
+  title: string;
+  author: string;
+  category: number;
+  summary:string;
+  publication_date: string;
+  status: string;
+  rating: string;
+}
 
 @Component({
   selector: 'app-book-card',
@@ -15,18 +28,19 @@ export class BookCardComponent {
     category: "Classic",
     summary:'',
     publication_date: "2011",
-    status: "Currently Reading"
+    status: "Currently Reading",
+    rating:''
   
   };
   @Output() delete = new EventEmitter<string>();
-  constructor(private router: Router) {}
+  constructor(private router: Router,private http: HttpClient) {}
 
   show = true;
-
   toggleSummary() {
     this.show = !this.show;
   }
-
+  data:any;
+  final_data:any;
   delBook(id: string) {
     this.delete.emit(id);
   }
@@ -36,4 +50,15 @@ export class BookCardComponent {
   editBook(id:string){
     this.router.navigate([`/books/edit/${id}`]);
   }
+  add(id:string){
+    this.http
+    .get<Book>(`https://648a953b17f1536d65e94f3c.mockapi.io/book_club/${id}`)
+    .pipe(catchError((err) => [])).subscribe(val=>this.data=val);
+    // console.log(this.data);
+    this.http.post('https://648a953b17f1536d65e94f3c.mockapi.io/movies', this.data)
+    .pipe(catchError((err) => [])).subscribe(b=>this.final_data=b);
+    // this.router.navigate([``])   
+}
+
+  
 }

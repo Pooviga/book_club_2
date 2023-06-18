@@ -5,8 +5,8 @@
         <mat-form-field [style.width.px]=350>
           <mat-label>Image url</mat-label>
           <input matInput placeholder="Url" formControlName="image">
-          <mat-error *ngIf="image?.invalid && image?.touched "></mat-error>
-          <mat-error *ngIf="image?.errors?.['required']">Url is required</mat-error>
+          <mat-error *ngIf="image?.invalid && image?.touched ">Url is required</mat-error>
+          <mat-error *ngIf="image?.errors?.['required']"></mat-error>
         </mat-form-field>
       </div>
 
@@ -14,8 +14,8 @@
         <mat-form-field [style.width.px]=350>
           <mat-label>Title</mat-label>
           <input matInput placeholder="Title" formControlName="title">
-          <mat-error *ngIf="title?.invalid && title?.touched "></mat-error>
-          <mat-error *ngIf="title?.errors?.['required']">Title is required</mat-error>
+          <mat-error *ngIf="title?.invalid && title?.touched ">Title is required</mat-error>
+          <mat-error *ngIf="title?.errors?.['required']"></mat-error>
         </mat-form-field>
       </div>
 
@@ -35,8 +35,8 @@
         <mat-form-field [style.width.px]=350>
           <mat-label>Author</mat-label>
           <input matInput placeholder="Url" formControlName="author">
-          <mat-error *ngIf="author?.invalid && author?.touched "></mat-error>
-          <mat-error *ngIf="author?.errors?.['required']">Author is required</mat-error>
+          <mat-error *ngIf="author?.invalid && author?.touched ">Author is required</mat-error>
+          <mat-error *ngIf="author?.errors?.['required']"></mat-error>
         </mat-form-field>
       </div>
   
@@ -51,8 +51,8 @@
         <mat-form-field [style.width.px]=350>
           <mat-label>Category</mat-label>
           <input matInput placeholder="Url" formControlName="category">
-          <mat-error *ngIf="category?.invalid && category?.touched "></mat-error>
-          <mat-error *ngIf="category?.errors?.['required']">Category is required</mat-error>
+          <mat-error *ngIf="category?.invalid && category?.touched ">Category is required</mat-error>
+          <mat-error *ngIf="category?.errors?.['required']"></mat-error>
         </mat-form-field>
       </div>
       <!-- <label for="Category">Category</label>
@@ -76,8 +76,8 @@
         <input matInput formControlName="publication_date"  [matDatepicker]="picker">
         <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
-        <mat-error *ngIf="publication_date?.invalid && publication_date?.touched "></mat-error>
-          <mat-error *ngIf="publication_date?.errors?.['required']">Publication date is required</mat-error>
+        <mat-error *ngIf="publication_date?.invalid && publication_date?.touched ">Publication date is required</mat-error>
+          <mat-error *ngIf="publication_date?.errors?.['required']"></mat-error>
       </mat-form-field>
       <!-- <label for="Date">Publication Date</label>
   
@@ -91,8 +91,16 @@
         <mat-form-field [style.width.px]=350>
           <mat-label>Summary</mat-label>
           <input matInput placeholder="Url" formControlName="summary">
-          <mat-error *ngIf="summary?.invalid && summary?.touched "></mat-error>
-          <mat-error *ngIf="summary?.errors?.['required']">Summary is required</mat-error>
+          <mat-error *ngIf="summary?.invalid && summary?.touched ">Summary is required</mat-error>
+          <mat-error *ngIf="summary?.errors?.['required']"></mat-error>
+        </mat-form-field>
+      </div>
+      <div class="example-container">
+        <mat-form-field [style.width.px]=350>
+          <mat-label>Rating</mat-label>
+          <input matInput placeholder="Url" formControlName="rating">
+          <mat-error *ngIf="rating?.invalid && rating?.touched ">Rating is required</mat-error>
+          <mat-error *ngIf="rating?.errors?.['required']"></mat-error>
         </mat-form-field>
       </div>
 
@@ -111,8 +119,8 @@
           <mat-option value="have_read">Have Read</mat-option>
           <mat-option  value="plan_to_read">Planning to read</mat-option>
         </mat-select>
-        <mat-error *ngIf="status?.invalid && status?.touched "></mat-error>
-          <mat-error *ngIf="status?.errors?.['required']">Status is required</mat-error>
+        <mat-error *ngIf="status?.invalid && status?.touched ">Status is required</mat-error>
+          <mat-error *ngIf="status?.errors?.['required']"></mat-error>
       </mat-form-field>
     
       <!-- <label for="Status">Status</label>
