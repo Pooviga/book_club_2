@@ -2,7 +2,7 @@
   <div class="form_">
     <form class="add-movie-form" [formGroup]="addBookForm" (ngSubmit)="onSubmit()"> 
       <div class="example-container">
-        <mat-form-field [style.width.px]=350>
+        <mat-form-field [style.width.px]=550>
           <mat-label>Image url</mat-label>
           <input matInput placeholder="Url" formControlName="image">
           <mat-error *ngIf="image?.invalid && image?.touched ">Url is required</mat-error>
@@ -11,7 +11,7 @@
       </div>
 
       <div class="example-container">
-        <mat-form-field [style.width.px]=350>
+        <mat-form-field [style.width.px]=550>
           <mat-label>Title</mat-label>
           <input matInput placeholder="Title" formControlName="title">
           <mat-error *ngIf="title?.invalid && title?.touched ">Title is required</mat-error>
@@ -32,7 +32,7 @@
         <p *ngIf="title?.errors?.['required']">Title is<strong>required</strong></p>
       </div> -->
       <div class="example-container">
-        <mat-form-field [style.width.px]=350>
+        <mat-form-field [style.width.px]=550>
           <mat-label>Author</mat-label>
           <input matInput placeholder="Url" formControlName="author">
           <mat-error *ngIf="author?.invalid && author?.touched ">Author is required</mat-error>
@@ -48,7 +48,7 @@
       </div> -->
   
       <div class="example-container">
-        <mat-form-field [style.width.px]=350>
+        <mat-form-field [style.width.px]=550>
           <mat-label>Category</mat-label>
           <input matInput placeholder="Url" formControlName="category">
           <mat-error *ngIf="category?.invalid && category?.touched ">Category is required</mat-error>
@@ -71,7 +71,7 @@
         </mat-form-field>
       </div> -->
 
-      <mat-form-field [style.width.px]=350>
+      <mat-form-field [style.width.px]=550>
         <mat-label>Choose a date</mat-label>
         <input matInput formControlName="publication_date"  [matDatepicker]="picker">
         <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
@@ -88,7 +88,7 @@
         </p>
       </div> -->
       <div class="example-container">
-        <mat-form-field [style.width.px]=350>
+        <mat-form-field [style.width.px]=550>
           <mat-label>Summary</mat-label>
           <input matInput placeholder="Url" formControlName="summary">
           <mat-error *ngIf="summary?.invalid && summary?.touched ">Summary is required</mat-error>
@@ -96,7 +96,7 @@
         </mat-form-field>
       </div>
       <div class="example-container">
-        <mat-form-field [style.width.px]=350>
+        <mat-form-field [style.width.px]=550>
           <mat-label>Rating</mat-label>
           <input matInput placeholder="Url" formControlName="rating">
           <mat-error *ngIf="rating?.invalid && rating?.touched ">Rating is required</mat-error>
@@ -112,12 +112,12 @@
       </div> -->
   
 
-      <mat-form-field [style.width.px]=350>
+      <mat-form-field [style.width.px]=550>
         <mat-label>Status</mat-label>
         <mat-select formControlName="status">
-          <mat-option value="currently_reading">Currently Reading</mat-option>
-          <mat-option value="have_read">Have Read</mat-option>
-          <mat-option  value="plan_to_read">Planning to read</mat-option>
+          <mat-option value="Reading">Currently Reading</mat-option>
+          <mat-option value="Read">Have Read</mat-option>
+          <mat-option  value="Should Read">Planning to read</mat-option>
         </mat-select>
         <mat-error *ngIf="status?.invalid && status?.touched ">Status is required</mat-error>
           <mat-error *ngIf="status?.errors?.['required']"></mat-error>
@@ -138,7 +138,7 @@
 
       
     
-      <button [style.width.px]=350 
+      <button [style.width.px]=550 
         mat-raised-button
         type="submit"
         [disabled]="addBookForm.invalid"

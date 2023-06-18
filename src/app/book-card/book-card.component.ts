@@ -2,17 +2,18 @@ import { HttpClient } from '@angular/common/http';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { catchError } from 'rxjs';
+import { Book } from '../book-list/book-list.component';
 
-interface Book {
-  id: string;
-  title: string;
-  author: string;
-  category: number;
-  summary:string;
-  publication_date: string;
-  status: string;
-  rating: string;
-}
+// interface Book {
+//   id: string;
+//   title: string;
+//   author: string;
+//   category: number;
+//   summary:string;
+//   publication_date: string;
+//   status: string;
+//   rating: string;
+// }
 
 @Component({
   selector: 'app-book-card',
@@ -53,11 +54,8 @@ export class BookCardComponent {
   add(id:string){
     this.http
     .get<Book>(`https://648a953b17f1536d65e94f3c.mockapi.io/book_club/${id}`)
-    .pipe(catchError((err) => [])).subscribe(val=>this.data=val);
-    // console.log(this.data);
-    this.http.post('https://648a953b17f1536d65e94f3c.mockapi.io/movies', this.data)
-    .pipe(catchError((err) => [])).subscribe(b=>this.final_data=b);
-    // this.router.navigate([``])   
+    .pipe(catchError((err) => [])).subscribe(val=>this.http.post('https://648a953b17f1536d65e94f3c.mockapi.io/movies', val)
+    .pipe(catchError((err) => [])).subscribe(b=>this.final_data=b));    
 }
 
   

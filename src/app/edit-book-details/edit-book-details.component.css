@@ -1,59 +1,59 @@
 
 body, html {
-    height: 100%;
-    margin-left: auto;
-  margin-right: auto;
-  }
-  
-  /* * {
-    box-sizing: border-box;
-  }
-   */
-  .bg-img {
-    /* The image used */
-    background-image: url("https://wallpaperaccess.com/full/3133075.jpg");
-  
-    /* Control the height of the image */
-    min-height: 850px;
-    object-fit: cover;
-  
-    /* Center and scale the image nicely */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-  }
-  
-  /* Add styles to the form container */
-  .add-movie-form {
-    /* position: absolute; */
-    right: 0;
-    /* margin: 80px; */
-    max-width: 350px;
-    padding: 20px;
-    background-color: white;
-    margin-left: auto;
-  margin-right: auto;
-  opacity:.9;
+  height: 100%;
+  margin-left: auto;
+margin-right: auto;
+}
+
+/* * {
+  box-sizing: border-box;
+}
+ */
+.bg-img {
+  /* The image used */
+  background-image: url("https://wallpaperaccess.com/full/3133075.jpg");
+
+  /* Control the height of the image */
+  min-height: 850px;
+  object-fit: cover;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+/* Add styles to the form container */
+.add-movie-form {
+  /* position: absolute; */
+  /* right: 0; */
+  /* margin: 80px; */
+  max-width: 550px;
+  padding: 20px;
+  background-color: white;
+  margin-left: auto;
+margin-right: auto;
+margin-top: auto;
+margin-bottom: auto;
+opacity: .9;
 
 
-    /* opacity: 0.8; */
-  }
+  /* opacity: 0.8; */
+}
 
 
-  /* Full-width input fields */
-  
-  /* Set a style for the submit button */
+/* Full-width input fields */
+
+/* Set a style for the submit button */
 /* .matInput{
-  width: 100px;
+width: 100px;
 } */
 mat-form-field {
-  width: 100%;
-  place-content: center;
-  display: flex;
+width: 100%;
 }
 .form_{
-  display: grid;
-  place-content: center;
-  height: 100vh;
+display: grid;
+place-content: center;
+height: 100vh;
 }
