@@ -27,7 +27,7 @@ body, html {
   /* Add styles to the form container */
   .add-movie-form {
     /* position: absolute; */
-    right: 0;
+    /* right: 0; */
     /* margin: 80px; */
     max-width: 600px;
     padding: 20px;

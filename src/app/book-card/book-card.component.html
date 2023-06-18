@@ -7,10 +7,11 @@
             
         <!-- </p> -->
         <p><span style="text-transform:uppercase">Author : </span><i> {{book.author}}✍</i></p>
-        <p><span style="text-transform:uppercase">Category : </span>{{book.category}}</p>
-        <p><span style="text-transform:uppercase">Publication Date : </span>{{book.publication_date}}</p>
+        <p><span style="text-transform:uppercase">Category : </span><i>{{book.category}}</i></p>
+        <p><span style="text-transform:uppercase">Publication Date : </span><i>{{book.publication_date}}</i></p>
         <mat-icon (click)="toggleSummary()" color = "primary">expand_more</mat-icon>
         <p *ngIf="!show" class="movie-summary">{{ book.summary}}</p>
+      
         
         <p><span style="text-transform:uppercase">Status of Reading : </span>{{book.status}}</p>
         
