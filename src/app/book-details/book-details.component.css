@@ -1,0 +1,28 @@
+.book-container {
+    width: 600px;
+    /* height: 800px; */
+    border-radius: 16px;
+    overflow: hidden;
+    padding: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+
+    /* background-color: rgb(16, 13, 13); */
+    /* color: white; */
+      
+    }
+    .book-poster {
+        height: 600px;
+        object-fit: cover;
+        width: 100%;
+        /*  */
+      
+        border-radius: 17px;
+      }
+
+      h1,h3{
+        text-transform: uppercase;
+      }

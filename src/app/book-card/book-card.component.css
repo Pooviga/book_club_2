@@ -1,14 +1,14 @@
 .book-container {
-  width: 400px;
+  width: 300px;
   border-radius: 16px;
   overflow: hidden;
-  padding: 16px;
-  background-color: rgb(107, 106, 106);
+  padding: 30px;
+  background-color: rgb(16, 13, 13);
   color: white;
-    /* margin: 20px; */
+    margin: 20px;
   }
   .book-poster {
-    height: 450px;
+    height: 300px;
     object-fit: cover;
     width: 100%;
   
@@ -31,3 +31,6 @@
     text-transform: uppercase;
   }
   
+mat-icon{
+  cursor: pointer;
+}

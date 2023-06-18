@@ -1,59 +1,149 @@
-<form class="add-movie-form" [formGroup]="addBookForm" (ngSubmit)="onSubmit()">
-  <input type="url" placeholder="url" formControlName="image" />
-    <div *ngIf="image?.invalid && image?.touched">
-      <p *ngIf="image?.errors?.['required']">Fill the image url..</p>
-    </div>
-    <input type="text" placeholder="title" formControlName="title" />
-  
-    <div *ngIf="title?.invalid && title?.touched">
-      <p *ngIf="title?.errors?.['required']">Fill this title?</p>
-    </div>
-    <input type="text" placeholder="author" formControlName="author" />
-  
-    <div *ngIf="author?.invalid && author?.touched">
-      <p *ngIf="author?.errors?.['required']">Fill this author name?</p>
-    </div>
+<div class="bg-img">
+  <div class="form_">
+    <form class="add-movie-form" [formGroup]="addBookForm" (ngSubmit)="onSubmit()"> 
+      <div class="example-container">
+        <mat-form-field [style.width.px]=350>
+          <mat-label>Image url</mat-label>
+          <input matInput placeholder="Url" formControlName="image">
+          <mat-error *ngIf="image?.invalid && image?.touched "></mat-error>
+          <mat-error *ngIf="image?.errors?.['required']">Url is required</mat-error>
+        </mat-form-field>
+      </div>
 
-    <input type="text" placeholder="category" formControlName="category" />
+      <div class="example-container">
+        <mat-form-field [style.width.px]=350>
+          <mat-label>Title</mat-label>
+          <input matInput placeholder="Title" formControlName="title">
+          <mat-error *ngIf="title?.invalid && title?.touched "></mat-error>
+          <mat-error *ngIf="title?.errors?.['required']">Title is required</mat-error>
+        </mat-form-field>
+      </div>
+
+      <!-- <label for="Image Url">Image Url</label>
+        <input type="url"  placeholder="Url" formControlName="image" />
+        <div *ngIf="image?.invalid && image?.touched">
+          <p> >Url is<strong>required</strong></p>
+        </div> -->
+      
+        <!-- <label for="Title">Title</label>
+      <input type="text" placeholder="Title" formControlName="title" />
+    
+      <div *ngIf="title?.invalid && title?.touched">
+        <p *ngIf="title?.errors?.['required']">Title is<strong>required</strong></p>
+      </div> -->
+      <div class="example-container">
+        <mat-form-field [style.width.px]=350>
+          <mat-label>Author</mat-label>
+          <input matInput placeholder="Url" formControlName="author">
+          <mat-error *ngIf="author?.invalid && author?.touched "></mat-error>
+          <mat-error *ngIf="author?.errors?.['required']">Author is required</mat-error>
+        </mat-form-field>
+      </div>
   
-    <div *ngIf="category?.invalid && category?.touched">
-      <p *ngIf="category?.errors?.['required']">Fill this category ?</p>
-    </div>
+      <!-- <label for="Author">Author</label>
+      <input type="text" placeholder="Author Name" formControlName="author" />
+    
+      <div *ngIf="author?.invalid && author?.touched">
+        <p *ngIf="author?.errors?.['required']">Author name is <strong>required</strong></p>
+      </div> -->
   
-    <input type="text" placeholder="publication_date" formControlName="publication_date" />
+      <div class="example-container">
+        <mat-form-field [style.width.px]=350>
+          <mat-label>Category</mat-label>
+          <input matInput placeholder="Url" formControlName="category">
+          <mat-error *ngIf="category?.invalid && category?.touched "></mat-error>
+          <mat-error *ngIf="category?.errors?.['required']">Category is required</mat-error>
+        </mat-form-field>
+      </div>
+      <!-- <label for="Category">Category</label>
+      <input type="text" placeholder="Category" formControlName="category" />
+    
+      <div *ngIf="category?.invalid && category?.touched">
+        <p *ngIf="category?.errors?.['required']">Category is <strong>required</strong> of the Book</p>
+      </div> -->
   
-    <div *ngIf="publication_date?.invalid && publication_date?.touched">
-      <p *ngIf="publication_date?.errors?.['required']">Fill this publication Date ?
-      </p>
-    </div>
-    <input type="text" placeholder="Summary" formControlName="summary" />
+      <!-- <div class="example-container">
+        <mat-form-field>
+          <mat-label>Publication date</mat-label>
+          <input matInput placeholder="Url" formControlName="publication_date">
+          <mat-error *ngIf="publication_date?.invalid && publication_date?.touched "></mat-error>
+          <mat-error *ngIf="publication_date?.errors?.['required']">Publication date is required</mat-error>
+        </mat-form-field>
+      </div> -->
+
+      <mat-form-field [style.width.px]=350>
+        <mat-label>Choose a date</mat-label>
+        <input matInput formControlName="publication_date"  [matDatepicker]="picker">
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        <mat-error *ngIf="publication_date?.invalid && publication_date?.touched "></mat-error>
+          <mat-error *ngIf="publication_date?.errors?.['required']">Publication date is required</mat-error>
+      </mat-form-field>
+      <!-- <label for="Date">Publication Date</label>
   
-    <div *ngIf="summary?.invalid && summary?.touched">
-      <p *ngIf="summary?.errors?.['required']">Fill this summary .
-      </p>
-    </div>
+      <input type="date" placeholder="Publication Date" formControlName="publication_date" />
+    
+      <div *ngIf="publication_date?.invalid && publication_date?.touched">
+        <p *ngIf="publication_date?.errors?.['required']">Publication date is <strong>required</strong>
+        </p>
+      </div> -->
+      <div class="example-container">
+        <mat-form-field [style.width.px]=350>
+          <mat-label>Summary</mat-label>
+          <input matInput placeholder="Url" formControlName="summary">
+          <mat-error *ngIf="summary?.invalid && summary?.touched "></mat-error>
+          <mat-error *ngIf="summary?.errors?.['required']">Summary is required</mat-error>
+        </mat-form-field>
+      </div>
+
+      <!-- <label for="Summary">Summary</label>
+      <input type="text" placeholder="Summary" formControlName="summary" />
+    
+      <div *ngIf="summary?.invalid && summary?.touched">
+        <p *ngIf="summary?.errors?.['required']">SUmmary is<strong>required</strong></p>
+      </div> -->
   
-    <input type="text" placeholder="status" formControlName="status" />
-  
-    <div *ngIf="status?.invalid && status?.touched">
-      <p *ngIf="status?.errors?.['required']">
-        Fill this trailer 😉?
-      </p>
-    </div>
-  
-    <button
-      mat-raised-button
-      color="primary"
-      type="submit"
-      [disabled]="addBookForm.invalid"
-    >
-      Add Book
-    </button>
-  </form>
-  
-  <!-- <p>{{ addMovieForm.status }}</p> -->
-  <!-- <p>Errors</p>
-  <p>Name: {{ addMovieForm.get("username")?.errors | json }}</p>
-  <p>Age: {{ addMovieForm.get("age")?.errors | json }}</p> -->
-  
-  <!-- Sysn@f123 -->
+
+      <mat-form-field [style.width.px]=350>
+        <mat-label>Status</mat-label>
+        <mat-select formControlName="status">
+          <mat-option value="currently_reading">Currently Reading</mat-option>
+          <mat-option value="have_read">Have Read</mat-option>
+          <mat-option  value="plan_to_read">Planning to read</mat-option>
+        </mat-select>
+        <mat-error *ngIf="status?.invalid && status?.touched "></mat-error>
+          <mat-error *ngIf="status?.errors?.['required']">Status is required</mat-error>
+      </mat-form-field>
+    
+      <!-- <label for="Status">Status</label>
+        <select name="cars" id="cars" formControlName="status">
+          <option value="currently_reading">Currently Reading</option>
+          <option value="have_read">Have Read</option>
+          <option value="plan_to_read">Plan to Read</option>
+        </select> 
+    
+      <div *ngIf="status?.invalid && status?.touched">
+        <p *ngIf="status?.errors?.['required']">
+          Status of reading is <strong>required</strong>
+        </p>
+      </div> -->
+
+      
+    
+      <button [style.width.px]=350 
+        mat-raised-button
+        type="submit"
+        [disabled]="addBookForm.invalid"
+      >
+        Add Movie
+      </button>
+      </form>
+  </div>
+    
+</div>
+  <!-- <div id="image">
+    <img src="https://wallpaperaccess.com/full/3133075.jpg">
+  </div> -->
+
+
+ 

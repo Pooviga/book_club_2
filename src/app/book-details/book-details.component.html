@@ -1,10 +1,32 @@
 <div  class="book-container">
     <div class="book-content">
-        <h1>{{book.title}}</h1>  
-        <h2>{{book.authors}}</h2>   
-        <h2>{{book.category}}</h2>       
-        <h2>{{book.publication_date}}</h2>       
-        <h2>{{book.status}}</h2>       
-
+        <img class="book-poster" [src]="book.image" [alt]="book.title" />
+        <h1><b>{{book.title}}✨</b></h1>  
+        <h3><i>{{book.author}}📝</i></h3>   
+        <p><b>Genere : </b>{{book.category}}</p>       
+        <p><b>Publication Date :</b> {{book.publication_date}}</p>       
+        <p>{{ book.summary}}</p>
+        <p>Status : {{book.status}}👀</p>       
     </div>
+
   </div>
+
+  
+<!-- <div class="book-container">
+    <div>
+        <img class="book-poster" [src]="book.image" [alt]="book.title" />
+        <p class="book-spec"> -->
+            <!-- <h3>{{book.title}}📚</h3>     -->
+            
+        <!-- </p> -->
+        <!-- <p><i>{{book.author}}✍</i></p>
+        <p>{{book.category}}</p>
+        <p>{{book.publication_date}}</p>
+        <button (click)="toggleSummary()"><mat-icon color = "primary">expand more</mat-icon></button>
+        <p>{{ book.summary}}</p>
+        <p>Status of Reading : {{book.status}}</p>
+        
+    
+    
+
+</div> -->

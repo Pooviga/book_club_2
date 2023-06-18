@@ -14,6 +14,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./add-book.component.css']
 })
 export class AddBookComponent {
+
   addBookForm = this.fb.group({
     image:['',Validators.required],
     title: ['', Validators.required],

@@ -2,23 +2,24 @@
 <div class="book-container">
     <div>
         <img class="book-poster" [src]="book.image" [alt]="book.title" />
-        <div class="book-spec">
+        <!-- <p class="book-spec"> -->
             <h3>{{book.title}}📚</h3>    
-            <p><i>{{book.author}}✍</i></p>
-        </div>
+            
+        <!-- </p> -->
+        <p><span style="text-transform:uppercase">Author : </span><i> {{book.author}}✍</i></p>
+        <p><span style="text-transform:uppercase">Category : </span>{{book.category}}</p>
+        <p><span style="text-transform:uppercase">Publication Date : </span>{{book.publication_date}}</p>
+        <mat-icon (click)="toggleSummary()" color = "primary">expand_more</mat-icon>
+        <p *ngIf="!show" class="movie-summary">{{ book.summary}}</p>
         
-        <p>{{book.category}}</p>
-        <p>{{book.publication_date}}</p>
-        <button (click)="toggleSummary()">Toggle Summary</button>
-        <p *ngIf="show" class="movie-summary">{{ book.summary}}</p>
-        <p>Status of Reading : {{book.status}}</p>
+        <p><span style="text-transform:uppercase">Status of Reading : </span>{{book.status}}</p>
         
     </div>
     <div class="book-button">
-        <button (click)="goToDetails(book.id)">Info</button>
+        <mat-icon (click)="goToDetails(book.id)" class="icon" color = "primary">info</mat-icon>
 
-    <button (click)="delBook(book.id)">Delete</button>
-    <button (click)="editBook(book.id)">EditBookInfo</button>
+   <mat-icon (click)="delBook(book.id)" class="icon" color = "warn">delete</mat-icon>
+    <mat-icon (click)="editBook(book.id)" class="icon" color = "primary">edit</mat-icon>
     </div>
     
 
