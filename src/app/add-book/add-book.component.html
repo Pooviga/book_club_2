@@ -117,7 +117,7 @@
         <mat-select formControlName="status">
           <mat-option value="Reading">Currently Reading</mat-option>
           <mat-option value="Read">Have Read</mat-option>
-          <mat-option  value="Should Read">Planning to read</mat-option>
+          <mat-option  value="Should read">Planning to read</mat-option>
         </mat-select>
         <mat-error *ngIf="status?.invalid && status?.touched ">Status is required</mat-error>
           <mat-error *ngIf="status?.errors?.['required']"></mat-error>
