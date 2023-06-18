@@ -46,3 +46,8 @@ body, html {
 /* .matInput{
   width: 100px;
 } */
+mat-form-field {
+  width: 100%;
+  place-content: center;
+  display: flex;
+}
