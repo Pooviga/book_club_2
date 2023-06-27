@@ -6,49 +6,50 @@ import { BooksService } from '../books.service';
 @Component({
   selector: 'app-edit-book-details',
   templateUrl: './edit-book-details.component.html',
-  styleUrls: ['./edit-book-details.component.css']
+  styleUrls: ['./edit-book-details.component.css'],
 })
 export class EditBookDetailsComponent {
   addBookForm = this.fb.group({
-    image:['',Validators.required],
+    image: ['', Validators.required],
     title: ['', Validators.required],
     author: ['', [Validators.required]],
     category: ['', [Validators.required]],
-    summary:['',Validators.required],
+    summary: ['', Validators.required],
     publication_date: ['', [Validators.required]],
     status: ['', [Validators.required]],
-    rating:['',Validators.required],
+    rating: ['', Validators.required],
   });
   constructor(
     private fb: FormBuilder,
     private booksService: BooksService,
     private router: Router,
-    private route: ActivatedRoute,
-
+    private route: ActivatedRoute
   ) {}
-    book:any;
-    bookId:string='';
-    ngOnInit() {
-      this.route.paramMap.subscribe((route) => {
-        this.bookId = route.get('id') as string;
-        this.booksService.getBookById(this.bookId as string)
-        .subscribe((data) => {this.addBookForm.patchValue(data as any);
-        });
+  book: any;
+  bookId: string = '';
+  ngOnInit() {
+    this.route.paramMap.subscribe((route) => {
+      this.bookId = route.get('id') as string;
+      this.booksService.getBookById(this.bookId as string).subscribe((data) => {
+        this.addBookForm.patchValue(data as any);
       });
-    }
-    onSubmit() {
-      console.log(this.addBookForm.status);
-  
-      if (this.addBookForm.valid) {
-        const updateBook = this.addBookForm.value;
-        
-        console.log(updateBook);
-        this.booksService.updateBook(this.bookId,updateBook as any).subscribe(() => {
+    });
+  }
+  onSubmit() {
+    console.log(this.addBookForm.status);
+
+    if (this.addBookForm.valid) {
+      const updateBook = this.addBookForm.value;
+
+      console.log(updateBook);
+      this.booksService
+        .updateBook(this.bookId, updateBook as any)
+        .subscribe(() => {
           this.router.navigate(['/books']);
         });
-      }
     }
-get title() {
+  }
+  get title() {
     return this.addBookForm.get('title');
   }
   get image() {
@@ -75,6 +76,4 @@ get title() {
   get status() {
     return this.addBookForm.get('status');
   }
-
-
 }
