@@ -26,9 +26,18 @@ export class BooksService {
       .delete(`https://648a953b17f1536d65e94f3c.mockapi.io/book_club/${id}`)
       .pipe(catchError((err) => []));
   }
+  deleteBook_fav(id: string) {
+    console.log('Deleting... movie', id);
+    return this.http
+      .delete(`https://648a953b17f1536d65e94f3c.mockapi.io/movies/${id}`)
+      .pipe(catchError((err) => []));
+  }
 
   deleteGetBook(id: string) {
     return this.deleteBook(id).pipe(concatMap(() => this.getBooks()));
+  }
+  deleteGetBook_fav(id: string) {
+    return this.deleteBook_fav(id).pipe(concatMap(() => this.getBooks()));
   }
 
   getBookById(id: string) {

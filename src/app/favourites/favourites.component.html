@@ -1,7 +1,7 @@
 <div class="book-list-container">
-    <app-book-card
+    <app-fav-card
       *ngFor="let mv of list$ | async; trackBy: trackByFn"
       [book]="mv"
-      
-    ></app-book-card>
+      (delete)="deleteGetBook_fav($event)"
+    ></app-fav-card>
 </div>
